@@ -1,0 +1,46 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Contact Us</h1>
+
+    {% if success %}
+    <div class="alert alert-success" role="alert">
+        Your message has been sent successfully!
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <!-- Contact Form -->
+        <div class="col-md-8 offset-md-2">
+            <form action="/contact" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <h5>Contact Info</h5>
+            <p>Email: <a href="mailto:info@guidedclothing.com">info@guidedclothing.com</a></p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

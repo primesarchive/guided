@@ -1,0 +1,140 @@
+<!-- base.jinja -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guided Clothing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+<style>
+/* styles.css */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.hero-image {
+    height: 100vh;
+    /* Full viewport height */
+    background: url('{{ url_for("static", filename="images/product1.jpg") }}') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay for contrast */
+}
+
+/* Navbar Styling */
+.navbar {
+    transition: background-color 0.4s, color 0.4s;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+}
+
+.navbar.transparent {
+    background: transparent;
+}
+
+.navbar.solid {
+    background-color: white !important;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.transparent .nav-link,
+.navbar.transparent .navbar-brand {
+    color: white;
+}
+
+.navbar.solid .nav-link,
+.navbar.solid .navbar-brand {
+    color: black !important;
+}
+</style>
+</head>
+<body>
+    <!-- Navbar -->
+    {% include 'partials/header.jinja' %}
+
+
+    <!-- Main content block (this is where home.jinja content will be injected) -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    {% include 'partials/footer.jinja' %}
+
+
+  <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navbar = document.querySelector('.navbar');
+        const heroSection = document.querySelector('.hero-image');
+        const heroHeight = heroSection.offsetHeight;
+
+        // Initialize navbar to be transparent on page load
+        navbar.classList.add('transparent');
+
+        // Function to handle navbar background change based on scroll position
+        window.addEventListener('scroll', function () {
+            if (window.scrollY < heroHeight) {
+                navbar.classList.add('transparent');
+                navbar.classList.remove('solid');
+            } else {
+                navbar.classList.add('solid');
+                navbar.classList.remove('transparent');
+            }
+        });
+    });
+</script>
+</body>
+</html><!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navbar = document.querySelector('.navbar');
+        const heroSection = document.querySelector('.hero-image');
+        const heroHeight = heroSection.offsetHeight;
+
+        // Initialize navbar to be transparent on page load
+        navbar.classList.add('transparent');
+
+        // Function to handle navbar background change based on scroll position
+        window.addEventListener('scroll', function () {
+            if (window.scrollY < heroHeight) {
+                navbar.classList.add('transparent');
+                navbar.classList.remove('solid');
+            } else {
+                navbar.classList.add('solid');
+                navbar.classList.remove('transparent');
+            }
+        });
+    });
+</script>
+</body>
+</html>
