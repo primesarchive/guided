@@ -1,0 +1,58 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Hoodie",
+            "image": "product2.jpg",
+            "price": 29.99
+        },
+        {
+            "id": 2,
+            "name": "T-Shirt",
+            "image": "product2.jpg",
+            "price": 19.99
+        },
+        {
+            "id": 3,
+            "name": "Cap",
+            "image": "product3.jpg",
+            "price": 15.99
+        },
+        {
+            "id": 4,
+            "name": "Hoodie",
+            "image": "product2.jpg",
+            "price": 29.99
+        },
+        {
+            "id": 5,
+            "name": "T-Shirt",
+            "image": "product2.jpg",
+            "price": 19.99
+        },
+        {
+            "id": 6,
+            "name": "Cap",
+            "image": "product3.jpg",
+            "price": 15.99
+        },
+        {
+            "id": 7,
+            "name": "Hoodie",
+            "image": "product2.jpg",
+            "price": 29.99
+        },
+        {
+            "id": 8,
+            "name": "T-Shirt",
+            "image": "product2.jpg",
+            "price": 19.99
+        },
+        {
+            "id": 9,
+            "name": "Cap",
+            "image": "product3.jpg",
+            "price": 15.99
+        }
+    ]
+}
